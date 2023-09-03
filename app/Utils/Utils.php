@@ -2,12 +2,12 @@
 
 namespace App\Utils;
 
-use App\DataObject\ArticlePaginationRequest;
+use App\DataObject\PaginationRequest;
 use Illuminate\Http\Request;
 
 class Utils
 {
-    public function getPagination(Request $request): ArticlePaginationRequest {
+    public function getPagination(Request $request): PaginationRequest {
         $page = $request->query('page');
         $size = $request->query('size');
         $sortOrder = $request->query('sortOrder');
@@ -16,7 +16,7 @@ class Utils
         $pageSize = (!is_null($size)) ? (int)$size : 10;
         $offset = ($page - 1) * $pageSize;
 
-        $objReq = new ArticlePaginationRequest();
+        $objReq = new PaginationRequest();
         $objReq->page = (!is_null($page)) ? (int)$page : 1;
         $objReq->size = $pageSize;
         $objReq->offset = $offset;

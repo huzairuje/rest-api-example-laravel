@@ -2,7 +2,7 @@
 
 namespace App\DataObject;
 
-class ArticlePaginationObject
+class PaginationObject
 {
     public $listData;
 

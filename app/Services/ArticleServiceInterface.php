@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
-use App\DataObject\ArticlePaginationRequest;
+use App\DataObject\PaginationRequest;
 
 interface ArticleServiceInterface
 {
-    public function getListPaginationArticle(ArticlePaginationRequest $filter, string $search);
+    public function getListPaginationArticle(PaginationRequest $filter, string $search);
 }

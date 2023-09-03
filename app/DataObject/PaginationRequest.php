@@ -2,7 +2,7 @@
 
 namespace App\DataObject;
 
-class ArticlePaginationRequest
+class PaginationRequest
 {
     public $page;
     public $size;

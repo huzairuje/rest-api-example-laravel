@@ -2,13 +2,13 @@
 
 namespace App\Repositories;
 
-use App\DataObject\ArticlePaginationObject;
-use App\DataObject\ArticlePaginationRequest;
+use App\DataObject\PaginationObject;
+use App\DataObject\PaginationRequest;
 use App\Models\Article;
 
 class ArticleRepositories implements ArticleRepositoryInterface
 {
-    public function getAllArticle(ArticlePaginationRequest $filter, string $search): ArticlePaginationObject {
+    public function getAllArticle(PaginationRequest $filter, string $search): PaginationObject {
         // Start with a base query to get all articles
         $query = Article::query();
 
@@ -35,7 +35,7 @@ class ArticleRepositories implements ArticleRepositoryInterface
         //paginate based on the paginate object
         $query->paginate($filter->size);
 
-        $respObj = new ArticlePaginationObject();
+        $respObj = new PaginationObject();
         $respObj->listData = $query->get();
         $respObj->countData = $query->count();
 

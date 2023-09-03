@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\DataObject\ArticlePaginationObject;
-use App\DataObject\ArticlePaginationRequest;
+use App\DataObject\PaginationObject;
+use App\DataObject\PaginationRequest;
 use App\Repositories\ArticleRepositories;
 
 class ArticleServices implements ArticleServiceInterface
@@ -14,7 +14,7 @@ class ArticleServices implements ArticleServiceInterface
         $this->repository = new ArticleRepositories();
     }
 
-    public function getListPaginationArticle(ArticlePaginationRequest $filter, string $search): ArticlePaginationObject
+    public function getListPaginationArticle(PaginationRequest $filter, string $search): PaginationObject
     {
         return $this->repository->getAllArticle($filter, $search);
     }

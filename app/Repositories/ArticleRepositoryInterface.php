@@ -2,9 +2,9 @@
 
 namespace App\Repositories;
 
-use App\DataObject\ArticlePaginationRequest;
+use App\DataObject\PaginationRequest;
 
 interface ArticleRepositoryInterface
 {
-    public function getAllArticle(ArticlePaginationRequest $filter, string $search);
+    public function getAllArticle(PaginationRequest $filter, string $search);
 }
